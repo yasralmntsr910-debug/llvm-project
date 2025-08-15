@@ -346,6 +346,10 @@ It is recommended to add ``llvm.loop.disable_nonforced`` to
 fallback version (which is likely never executed) is further optimized
 which would increase the code size.
 
+It is recommended to add ``llvm.loop.isdistributed`` to mark loops
+that have been transformed by LoopDistribute so that they are not
+reprocessed under LTO, where they may be given a second opportunity.
+
 Versioning LICM
 ---------------
 
